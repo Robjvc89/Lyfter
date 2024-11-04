@@ -1,0 +1,5 @@
+print("start task")
+print("Find the number")
+print("Give me an instruction")
+print("Good job")
+print("Ask for help")
