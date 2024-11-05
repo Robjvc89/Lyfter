@@ -1,0 +1,65 @@
+Ejercicios
+
+1. Cree un pseudocódigo que le pida un precio de producto al usuario, calcule su descuento y muestre el precio final tomando en cuenta que:
+    1. Si el precio es menor a 100, el descuento es del 2%.
+    2. Si el precio es mayor o igual a 100, el descuento es del 10%.
+    3. *Ejemplos*:
+        1. 120 → 108
+        2. 40 → 39.2
+
+Resolución
+
+1. Inicio
+2. Definir precio de producto
+3. Definir descuento
+4. Definir precio final
+5. Mostrar “Ingrese Precio de producto”
+6. Pedir precio de producto
+7. Si (precio de producto < 100)entonces:
+8. descuento = precio de producto*0.02
+9. Sino:
+10. Si (precio de producto ≥ 100)entonces:
+
+i. descuento = precio de producto*0.1
+
+1. FinSi
+2. precio final = precio de producto - descuento
+3. Mostrar “El precio final del producto es de”
+4. Mostrar precio final
+5. Fin
+6. Cree un pseudocódigo que le pida un tiempo en segundos al usuario y calcule si es menor o mayor a 10 minutos. Si es menor, muestre cuántos segundos faltarían para llegar a 10 minutos. Si es mayor, muestre “*Mayor*”.
+    1. *Ejemplos*:
+        1. 1040 → Mayor
+        2. 140 → 460
+        3. 599 → 1
+
+Resolución
+
+1. Inicio
+2. Definir Tiempo en segundos
+3. Mostrar “Ingrese Tiempo en segundos”
+4. Pedir Tiempo en segundos
+5. Si (Tiempo en segundos < 600 segundos) entonces:
+6. 600 - Tiempo en segundos
+7. Sino:
+8. Si (Tiempo en segundos > 600 segundos) entonces:
+9. Mostrar “Mayor”
+10. Finsi
+11. Fin
+12. Cree un algoritmo que le pida un número al usuario y muestre la suma de todos los números desde 1 hasta ese número.
+    1. 3 → 6 (1 + 2 + 3)
+    2. 5 → 15 (1 + 2 + 3 + 4 + 5)
+    3. 12 → 78 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12)
+
+Resolución
+
+1. Inicio
+2. Definir número, i como Entero
+3. Mostrar “Ingrese un número”
+4. Pedir número
+5. Suma = 0
+6. Mientras i = 1 hasta numero con paso 1 entonces:
+7. Suma = suma + i
+8. Finmientras
+9. Mostrar “La suma de los “números”  es: “, suma
+10. Fin
