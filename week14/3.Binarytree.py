@@ -10,7 +10,10 @@ class BinaryTree:
     
     def print_tree(self):
         """Prints the tree structure in pre-order traversal (root, left, right)."""
-        self._pre_order(self.root)
+        if self.root is None:
+            print("The tree is empty.") 
+        else:
+            self._pre_order(self.root)
     
     def _pre_order(self, node):
         """Helper method for pre-order traversal."""
@@ -18,8 +21,6 @@ class BinaryTree:
             print(node.data, end=" ")  
             self._pre_order(node.left)  
             self._pre_order(node.right)  
-
-
 
 node_7 = Node(7)
 node_6 = Node(6)
@@ -35,3 +36,8 @@ binary_tree = BinaryTree(root)
 
 print("Binary Tree (Pre-order Traversal):")
 binary_tree.print_tree()
+
+empty_tree = BinaryTree()
+
+print("\nTesting with an empty tree:")
+empty_tree.print_tree()
