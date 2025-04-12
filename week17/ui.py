@@ -6,11 +6,12 @@ from storage import load_data, save_data, get_transactions
 
 def show_add_category_window(data):
     layout = [
-        [sg.Text('Add New Category')],
-        [sg.InputText(key='category')],
-        [sg.Button('Add'), sg.Button('Cancel')]
+        [sg.Text('Add New Category', font=('Any', 14), justification='center', expand_x=True)],
+        [sg.Text('Name:', size=(10, 1), justification='right'), sg.InputText(key='category')],
+        [sg.Push(), sg.Button('Add'), sg.Button('Cancel')]
     ]
-    window = sg.Window('Add Category', layout)
+    window = sg.Window('Add Category', layout, element_justification='center', finalize=True)
+
     while True:
         event, values = window.read()
         if event in (sg.WIN_CLOSED, 'Cancel'):
@@ -32,13 +33,13 @@ def show_add_transaction_window(data, trans_type, refresh_table_callback):
         return
 
     layout = [
-        [sg.Text(f'Add {trans_type.capitalize()}')],
-        [sg.InputText(key='title')],
-        [sg.InputText(key='amount')],
-        [sg.Combo(data['categories'], key='category', readonly=True)],
-        [sg.Button('Add'), sg.Button('Cancel')]
+        [sg.Text(f'Add {trans_type.capitalize()}', font=('Any', 14), justification='center', expand_x=True)],
+        [sg.Text('Title:', size=(10, 1), justification='right'), sg.InputText(key='title')],
+        [sg.Text('Amount:', size=(10, 1), justification='right'), sg.InputText(key='amount')],
+        [sg.Text('Category:', size=(10, 1), justification='right'), sg.Combo(data['categories'], key='category', readonly=True)],
+        [sg.Push(), sg.Button('Add'), sg.Button('Cancel')]
     ]
-    window = sg.Window(f'Add {trans_type.capitalize()}', layout)
+    window = sg.Window(f'Add {trans_type.capitalize()}', layout, element_justification='center', finalize=True)
 
     while True:
         event, values = window.read()
@@ -101,3 +102,4 @@ def show_main_window():
             show_add_transaction_window(data, 'income', lambda: refresh_table(window))
 
     window.close()
+
